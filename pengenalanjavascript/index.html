@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Sederhana</title>
+  <!--judul teks yang akan tampil browser atau tab-->
+  <style>
+    body{ /*bagian buat di dalam body*/
+      font-family: 'Arial', sans-serif; /*semua font text yang ada didalam body*/
+      margin: 0; /*hapus jarak default browser*/
+      background: #f4f4f4; /*warna background*/
+    }
+    header { /*untuk bagian kepala atas*/
+      background: #333; /*warna background*/
+      color: white;
+      padding: 15px; /*jarak antar elemen*/
+      text-align: center;
+    }
+    nav { /*menu navigasi*/
+      background: #555; /*warna background*/
+      padding: 10px; /*jarak antar elemen*/
+      text-align: center; /*text posisi berada ditengah*/
+    }
+    nav a {
+      color: white; /*warna text*/
+      margin: 0 10px; /*hapus jarak default browser*/
+      text-decoration: none;  /*mengahpus dekorasi/garis dibawah link text*/
+    }
+    nav a:hover { /*bagian tag <a> / link di navbar*/
+      text-decoration: underline; /*memberi dekorasi/garis dibawah link tersebut*/
+    }
+    main {  /*konten utama*/
+      padding: 20px;  /*jarak dalam elemen*/
+    }
+    section {  /*pembagian konten*/
+      margin-bottom: 20px; /*hapus jarak default browser bawah*/
+      background: white; /*warna background*/
+      padding: 15px; /*jarak pada elmen*/
+      border-radius: 8px; /*sudut melengkung*/
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /*efek bayangan*/
+    }
+    footer { /*bagian bawah web*/
+      background: #528b92; /*warna background*/
+      color: white; /*warna text*/
+      text-align: center; /*posisi text ditengah*/
+      padding: 10px; /*jarak pada elemen*/
+      position: fixed; /*footer nempel dibawah layar*/
+      bottom: 0; 
+      width: 100%;
+    }
+    button {  /*tempat klik*/
+      padding: 10px 15px;  /*jarak dalam elemen*/
+      background: #28a745;/*warna background*/
+      color: white; /*warna text*/
+      border: none; /*garis*/
+      border-radius: 5px; /*sudut melengkung*/
+      cursor: pointer; /*kursor jadi tangan pas mencet button*/
+    }
+  </style>
+</head>
+<body>
+
+    
+<header> <!-- bagian atas halaman logo atau judul -->
+  <h1>Website Satu File</h1>  /*ukuran judul besar*/
+  <p>HTML + CSS + JavaScript dalam satu file</p>
+</header>
+
+<nav>  <!-- navigasi atau menu link -->
+  <a href="#home">Home</a>   <!-- link page home -->
+  <a href="#about">About</a>   <!-- link page about -->
+  <a href="#contact">Contact</a>   <!-- link page contact -->
+</nav>
+
+<main>  <!-- konten utama -->
+  <section id="home">
+    <h2>Home</h2>   <!--ukuran teks heading -->
+    <p>Ini adalah halaman utama website sederhana.</p>  <!-- paragraf-->
+    <button onclick="tampilkanPesan()">Klik Saya</button>  <!-- tombol dan fungsi js saat diklik -->
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Website ini dibuat dalam satu file menggunakan HTML, CSS, dan JavaScript.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>  <!-- ukuran text heading -->
+    <form onsubmit="kirimForm(event)">  <!-- form input dan memanggil fungsi js saat dikirim -->
+      <label>Nama:</label><br> 
+      <input type="text" id="nama" required><br><br>  <!-- kolom isian required berarti wajib di isi-->
+
+      <label>Email:</label><br>
+      <input type="email" required><br><br>   <!-- kolom isian required berarti wajib di isi-->
+
+      <button type="submit">Kirim</button>  <!-- button klik-->
+    </form>
+  </section>
+</main>
+
+<footer>  <!-- bagian bawah web -->
+  <p>&copy; 2026 Website Sederhana</p> <!-- simbol copyright dan text -->
+</footer>
+
+<script>
+  function tampilkanPesan() {  //fungsi dipanggil ketika tombol klik di klik\\ 
+    alert("Halo! Ini JavaScript dalam satu file."); //muncul kotak pesan pop up\\
+  }
+
+  function kirimForm(event) {  //fungsi dipanggil ketika form dikirim\\
+    event.preventDefault();  //cegah form reload halaman\\ 
+    const nama = document.getElementById("nama").value;  //ambil isi input sesuai id=nama+"! pesan anda terkirim"
+    alert("Terima kasih, " + nama + "! Pesan Anda terkirim.");  //muncul kotak pesan pop
+  }
+</script>
+
+</body>
+</html>
